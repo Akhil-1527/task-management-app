@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+/* Simplify by using @import instead of @use for Bootstrap */
+@import "bootstrap/scss/bootstrap";
+
+/* Import Bootstrap Icons */
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+/* Define SCSS variables */
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --success-color: #{$success-color};
+  --danger-color: #{$danger-color};
+  --light-color: #{$light-color};
+  --dark-color: #{$dark-color};
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}

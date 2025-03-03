@@ -1,0 +1,47 @@
+$primary-color: var(--primary-color);
+$dark-color: var(--dark-color);
+$light-color: var(--light-color);
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-navbar {
+  background-color: $primary-color;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    
+    a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      
+      i {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+.app-content {
+  flex: 1;
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+.app-footer {
+  background-color: $dark-color;
+  color: $light-color;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+}
