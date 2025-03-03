@@ -1,12 +1,12 @@
 import { bootstrapApplication } from '@angular/platform-browser';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { AppComponent } from './app/app.component';
-import { provideHttpClient } from '@angular/common/http'; // ✅ FIX: Provide HttpClient
-import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
+import { provideRouter } from '@angular/router';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideHttpClient(), // ✅ FIX: Registers HttpClient globally
-    provideRouter(routes)
+    provideRouter(routes),
+    provideHttpClient() // ✅ Ensures HttpClient is globally available
   ]
-}).catch(err => console.error("Error bootstrapping Angular app:", err));
+}).catch(err => console.error(err));

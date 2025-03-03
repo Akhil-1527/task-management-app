@@ -1,4 +1,3 @@
-/* Change @use to @import for component styles */
 @import "../../../styles.scss";
 
 .task-list-container {
@@ -20,6 +19,28 @@
   }
 }
 
+.filters-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  
+  label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+  
+  .form-select {
+    min-width: 150px;
+  }
+}
+
 .tasks-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -32,7 +53,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   transition: transform 0.2s, box-shadow 0.2s;
-  
+
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -49,31 +70,35 @@
   &.completed {
     border-left: 4px solid #5cb85c;
   }
-  
-  .task-title {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-    font-weight: 600;
+}
+
+.task-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.task-priority {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  color: white;
+  font-weight: 500;
+
+  &.high {
+    background-color: $danger-color;
   }
   
-  .task-priority {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 12px;
-    color: white;
-    font-weight: 500;
-    
-    &.high {
-      background-color: $danger-color;
-    }
-    
-    &.medium {
-      background-color: #f0ad4e;
-    }
-    
-    &.low {
-      background-color: $success-color;
-    }
+  &.medium {
+    background-color: #f0ad4e;
   }
+  
+  &.low {
+    background-color: $success-color;
+  }
+}
+
+.task-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
 }
